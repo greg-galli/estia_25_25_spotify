@@ -2,12 +2,12 @@ package fr.mbds.estia.spotify.controllers;
 
 import fr.mbds.estia.spotify.dtos.MusicDTO;
 import fr.mbds.estia.spotify.entities.Music;
-import fr.mbds.estia.spotify.repositories.MusicRepository;
 import fr.mbds.estia.spotify.services.IMusicService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/musics")
-@RestController
+@Controller
 public class MusicController {
 
     private final IMusicService musicService;
