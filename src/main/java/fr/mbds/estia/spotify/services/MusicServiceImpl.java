@@ -28,7 +28,31 @@ public class MusicServiceImpl implements IMusicService {
     }
 
     @Override
-    public MusicDTO createMusic(Music music) {
-        return musicMapper.toDto(musicRepository.save(music));
+    public MusicDTO createMusic(MusicDTO musicDTO) {
+        return musicMapper.toDto(musicRepository.save(musicMapper.toEntity(musicDTO)));
+    }
+
+    @Override
+    public List<MusicDTO> getMusics() {
+        return musicMapper.toDtos(musicRepository.findAll());
+    }
+
+    @Override
+    public MusicDTO editFullMusic(Long id, MusicDTO musicDTO) {
+        Music music = musicRepository.findById(id).orElse(null);
+        // TODO : écraser les propriétés de "music" avec les propriétés de "musicDTO" et on sauvegarde
+        return musicDTO;
+    }
+
+    @Override
+    public MusicDTO editMusic(Long id, MusicDTO musicDTO) {
+        Music music = musicRepository.findById(id).orElse(null);
+        // TODO : écraser les propriétés de "music" avec les propriétés de "musicDTO" et on sauvegarde
+        return musicDTO;
+    }
+
+    @Override
+    public void deleteMusic(Long id) {
+        musicRepository.deleteById(id);
     }
 }

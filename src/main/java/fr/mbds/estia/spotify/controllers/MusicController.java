@@ -22,7 +22,7 @@ public class MusicController {
     }
 
     @PostMapping
-    public MusicDTO createMusic(@RequestBody Music music) {
-        return musicService.createMusic(music);
+    public MusicDTO createMusic(@RequestBody MusicDTO musicDTO) {
+        return musicService.createMusic(musicDTO);
     }
 }

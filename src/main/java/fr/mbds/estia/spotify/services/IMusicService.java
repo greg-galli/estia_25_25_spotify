@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface IMusicService {
     MusicDTO getMusic(Long id);
-    MusicDTO createMusic(Music music);
+    MusicDTO createMusic(MusicDTO musicDTO);
+    List<MusicDTO> getMusics();
+    MusicDTO editFullMusic(Long id, MusicDTO musicDTO);
+    MusicDTO editMusic(Long id, MusicDTO musicDTO);
+    void deleteMusic(Long id);
 }

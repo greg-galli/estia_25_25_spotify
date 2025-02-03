@@ -2,6 +2,7 @@ package fr.mbds.estia.spotify.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
     private Integer trackLength;
@@ -24,4 +26,9 @@ public class Music {
 
     @ManyToMany
     private List<Album> albums;
+
+    @Lob
+    private byte[] cover;
+
+    private String coverUrl;
 }
