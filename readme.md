@@ -103,6 +103,27 @@ Exemples :
 - Permettre d'exécuter **tous les tests en une seule fois** via **l'option "Run" de Postman**
 
 ---
+# Partie 3 : Ajout de tests au projet
+
+Afin d'assurer la robustesse et la fiabilité de votre application, vous devez ajouter plusieurs tests dans votre projet :
+
+## 1. Tests unitaires
+
+- Implémentez **au moins une classe de tests unitaires** pour vérifier le bon fonctionnement de certaines méthodes de vos services ou contrôleurs.
+- Utilisez **JUnit** et **Mockito** pour simuler des dépendances lorsque nécessaire.
+
+## 2. Test d’intégration
+
+- Ajoutez un **test d’intégration** pour vérifier que les différentes couches de votre application (contrôleur, service, repository) fonctionnent bien ensemble.
+- Utilisez une **base de données en mémoire** (ex. H2) pour ce test.
+
+## 3. Test fonctionnel sur un endpoint de l’API REST
+
+- Rédigez un **test fonctionnel** sur un **point d’entrée** de votre API REST.
+- Ce test devra envoyer une requête HTTP et vérifier **le statut de réponse et le contenu retourné**.
+- Utilisez **Spring Boot Test** et **MockMvc** pour interagir avec votre API sans lancer un serveur complet.
+
+---
 
 ## Livrables
 
